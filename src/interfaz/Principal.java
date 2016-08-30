@@ -15,6 +15,8 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    Persona v[] = new Persona[5];
+    int cont= 0;
     public Principal() {
         initComponents();
     }
@@ -73,6 +75,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdCrear.setText("Guardar");
+        cmdCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCrearActionPerformed(evt);
+            }
+        });
         jPanel2.add(cmdCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, -1));
 
         cmdMostrar.setText("Mostrar");
@@ -98,6 +105,19 @@ public class Principal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCrearActionPerformed
+        Persona p;
+        long identificacion;
+        String primer_nombre, primer_apellido;
+        
+        identificacion = Long.parseLong(txtIdentificacion.getText());
+        primer_nombre = txtPrimerNombre.getText();
+        primer_apellido = txtPrimerApellido.getText();
+        
+        p = new Persona(identificacio, primer_nombre, primer_apellido);
+        
+    }//GEN-LAST:event_cmdCrearActionPerformed
 
     /**
      * @param args the command line arguments
